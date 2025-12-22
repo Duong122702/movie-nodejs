@@ -13,7 +13,7 @@ const app = express()
 const port = 4000
 
 app.use(express.json())
-const allowedOrigins = ['http://localhost:3000', 'https://movie-website-hd17kxmqx-duong122702s-projects.vercel.app']
+const allowedOrigins = ['http://localhost:3000', 'https://movie-website-a6g6j6l95-duong122702s-projects.vercel.app/']
 const corsOption = {
   origin: allowedOrigins,
   optionsSuccessStatus: 200,
