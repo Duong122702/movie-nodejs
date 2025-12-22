@@ -17,9 +17,8 @@ const allowedOrigins = ['http://localhost:3000', 'https://movie-website-a6g6j6l9
 const corsOption = {
   origin: allowedOrigins,
   optionsSuccessStatus: 200,
-  Credentials: true
+  credentials: true
 }
-app.use(cors(corsOption))
 app.use('/users', cors(corsOption), usersRouter)
 app.use('/movies', cors(corsOption), moviesRouter)
 app.use('/analytics', cors(corsOption), analyticsRouter)
