@@ -13,13 +13,15 @@ const app = express()
 const port = 4000
 
 app.use(express.json())
-const allowedOrigins = ['http://localhost:3000']
+const allowedOrigins = ['http://localhost:3000', 'https://movie-website-hd17kxmqx-duong122702s-projects.vercel.app']
 const corsOption = {
   origin: allowedOrigins,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  Credentials: true
 }
-app.use('/users',cors(corsOption) , usersRouter)
-app.use('/movies',cors(corsOption),  moviesRouter )
+app.use(cors(corsOption))
+app.use('/users', cors(corsOption), usersRouter)
+app.use('/movies', cors(corsOption), moviesRouter)
 app.use('/analytics', cors(corsOption), analyticsRouter)
 app.use('/comments', cors(corsOption), commentsRouter)
 app.use('/ratings', cors(corsOption), ratingsRouter)
